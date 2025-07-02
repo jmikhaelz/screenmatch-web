@@ -1,0 +1,11 @@
+#####BACKEND######
+backend/target/
+backend/.mvn/wrapper
+backend/!**/src/main/**/target/
+backend/!**/src/test/**/target/
+
+### VS Code ###
+.vscode/
+### Properties private ##
+backend/src/main/resources/application.properties
+backend/docker/.env
