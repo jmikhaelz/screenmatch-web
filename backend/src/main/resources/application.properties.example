@@ -1,12 +1,19 @@
+## Configuraciones de apis
 spring.application.name=omdbapi-springboot
 omdbapi.url=http://www.omdbapi.com/
 omdbapi.key=${OMDB_API_KEY}
 gemini.key=${GEMINI_API_KEY}
 
-spring.datasource.url=jdbc:postgresql://localhost:5432/${name_db}
+##Configuraciones de base de datos
+##Importante cambia el 
+spring.datasource.url=jdbc:postgresql://{ubicacion:port}/${name_db}
 spring.datasource.username=${name_user}
 spring.datasource.password=${psw_user}
 
+##Configuracion de acciones de BD
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.format-sql=true
+
+##Ajolamiento de peticiones/envios del backend
+server.port=8081
