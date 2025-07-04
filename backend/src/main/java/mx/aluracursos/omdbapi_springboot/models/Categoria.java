@@ -1,12 +1,13 @@
 package mx.aluracursos.omdbapi_springboot.models;
 
 public enum Categoria {
-    ACCION("Action", "Accion"),
+    ACCION("Action", "Acción"),
     ROMANCE("Romance", "Romance"),
     COMEDIA("Comedy", "Comedia"),
     DRAMA("Drama", "Drama"),
     CRIMEN("Crime", "Crimen"),
-    ANIMATION("Animation", "Animacion");
+    AVENTURA("Adventure", "Aventura"),
+    ANIMATION("Animation", "Animación");
 
     private String categoriaOmdb;
     private String categoriaspanish;
