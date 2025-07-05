@@ -181,7 +181,3 @@ Puedes probar los endpoints del backend con herramientas como [Postman](https://
 
 - Proyecto original por [Alura Latam](https://www.aluracursos.com/) y [Monica Hillman](https://www.linkedin.com/in/monicamhillman/)
 - Modificaciones y personalización por: [jmikhaelz](https://www.linkedin.com/in/jmikhaelz/)
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Para más detalles, consulta el archivo [LICENSE](LICENSE).
