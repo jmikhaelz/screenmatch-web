@@ -1,0 +1,71 @@
+
+/* COMPONENTES */
+
+/* BOTÓN */
+.btn-sortear {
+  display: block;
+  margin: 1em auto;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  padding: 0 1em;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5vh;
+  line-height: 4vh;
+  text-align: center;
+  transition: 0.3s;
+  width: 20%;
+  background-color: #62717a60;
+  box-shadow: 0px 5px 15px rgba(245, 245, 245, 0.295);
+}
+.btn-sortear:hover{
+  box-shadow: 0px 5px 15px rgba(245, 245, 245, 0.712);
+}
+
+/* CONTENEDOR PRINCIPAL DE FRASES */
+.ficha-descripcion {
+  position: relative;
+  display: block;
+  max-width: 800px;
+  height: auto;
+  padding-top: 10px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* IMAGEN DEL PÓSTER */
+.ficha-descripcion img {
+  width: 350px;
+  height: auto;
+  box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.295);
+  object-fit: cover;
+  filter: brightness(0.3);
+  display: block;
+  margin: 0 auto;
+}
+
+/* TEXTO SOBRE LA IMAGEN */
+.ficha-descripcion .descripcion-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  padding: 1rem 2rem;
+  z-index: 2;
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.6;
+  text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.8);
+}
+
+
+/* RESPONSIVE */
+@media screen and (max-width: 900px) {
+  .ficha-descripcion {
+    display: block;
+  }
+}

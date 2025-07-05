@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    background: linear-gradient(180.61deg,
+            #000000 25.16%,
+            #2b044f 80%,
+            #4b298a 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+select,
+option {
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    padding: 0 1em;
+}
+
+select {
+    border: none;
+    outline: none;
+}
+
+
+h2 {
+    color: white;
+}
+
+main {
+    padding: 0 3em;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 3em;
+}
+
+.header__logo {
+    display: flex;
+    gap: 1em;
+}
+
+.header__logo img {
+    width: 150px;
+    height: 50px;
+}
+
+.material-symbols-outlined {
+    color: rgba(255, 255, 255, 0.815);
+    font-size: 35px;
+}
+
+.lista {
+    list-style-type: none;
+    margin: 1em 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1em;
+}
+
+.lista li img {
+    width: 300px;
+    height: 444px;
+    box-shadow: 0px 10px 30px rgba(245, 240, 164, 0.6);
+}
+
+.lista li img:hover{
+    box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.897);
+}
+
+.pesquisa {
+    min-height: 100vh;
+}
+
+@media screen and (max-width: 1600px) {
+    .lista {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        overflow: hidden;
+    }
+
+    .lista li img {
+        width: 90%;
+        display: block;
+        margin: 1em auto;
+        height: 90%;
+        object-fit: cover;  
+    }
+    .header__logo img {
+        width: 70px;
+        height: 25px;
+    }
+
+    .material-symbols-outlined {
+        font-size: 24px
+    }
+
+    option {
+        font-size: 20px;
+    }
+
+}
