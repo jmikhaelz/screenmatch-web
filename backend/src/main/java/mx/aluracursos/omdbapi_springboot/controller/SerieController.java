@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import mx.aluracursos.omdbapi_springboot.dto.EpisodeDTO;
+import mx.aluracursos.omdbapi_springboot.dto.FraseDTO;
 import mx.aluracursos.omdbapi_springboot.dto.SerieDTO;
 import mx.aluracursos.omdbapi_springboot.service.SerieService;
 
@@ -56,5 +57,10 @@ public class SerieController {
     @GetMapping("/categoria/{nombreGenero}")
     public List<SerieDTO> obtenerSeriesPorGenero(@PathVariable String nombreGenero) {
         return servicio.obtenerSeriesPorGenero(nombreGenero);
+    }
+
+    @GetMapping("/frases")
+    public FraseDTO obtenerFrases() {
+        return servicio.obtenerFraseAleatoria();
     }
 }

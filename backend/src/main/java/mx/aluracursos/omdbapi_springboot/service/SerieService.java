@@ -8,9 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import mx.aluracursos.omdbapi_springboot.dto.EpisodeDTO;
+import mx.aluracursos.omdbapi_springboot.dto.FraseDTO;
 import mx.aluracursos.omdbapi_springboot.dto.SerieDTO;
 import mx.aluracursos.omdbapi_springboot.models.Categoria;
+import mx.aluracursos.omdbapi_springboot.models.Frase;
 import mx.aluracursos.omdbapi_springboot.models.SerieClass;
+import mx.aluracursos.omdbapi_springboot.repository.FraseRepository;
 import mx.aluracursos.omdbapi_springboot.repository.SerieRepository;
 
 @Service
@@ -18,6 +21,9 @@ public class SerieService {
 
     @Autowired
     private SerieRepository repository;
+
+    @Autowired
+    private FraseRepository repositoryF;
 
     public List<SerieDTO> seriesArchivadas() {
         return convtDatos(repository.findAll());
@@ -88,6 +94,15 @@ public class SerieService {
                     .collect(Collectors.toList());
         }
         return null;
+    }
+
+    public FraseDTO obtenerFraseAleatoria() {
+        Frase frase = repositoryF.obtenerFraseAleatoria();
+        return new FraseDTO(
+                frase.getTitulo(),
+                frase.getFrase(),
+                frase.getPersonaje(),
+                frase.getPoster());
     }
 
     private List<SerieDTO> convtDatos(List<SerieClass> data) {
