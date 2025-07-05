@@ -1,9 +1,10 @@
 # OMDB API Spring Boot
 
-Este servicio en Java usando Spring Boot que te permite buscar información sobre series y películas utilizando la [API de OMDB](https://www.omdbapi.com/). Además, almacena los resultados en una base de datos PostgreSQL y te permite consultarlos desde una interfaz interactiva en la línea de comandos.
+Este servicio es una aplicación en Java usando Spring Boot que te permite buscar información sobre series y películas utilizando la [API de OMDB](https://www.omdbapi.com/). Además, almacena los resultados en una base de datos PostgreSQL y te permite consultarlos desde una interfaz interactiva en la línea de comandos.
 
 ## 📜 Características
 
+- Interfaz interactiva en consola ([`MenuInteractivo.java`](src/main/java/mx/aluracursos/omdbapi_springboot/cli/MenuInteractivo.java))
 - Cliente para consumir la API de OMDB ([`OmdbApiClient.java`](src/main/java/mx/aluracursos/omdbapi_springboot/client/OmdbApiClient.java))
 - Modelos de datos para series, temporadas y episodios
 - Traducción automática de sinopsis usando Gemini API
@@ -56,10 +57,15 @@ Puedes detener los servicios con:
 docker-compose down
 ```
 
-### 4. Ejecuta la aplicación
+### 4. Ejecuta del servicio
 
+- Para manejo del servidor/API sobre la informacion de la DB
 ```bash
 ./mvnw spring-boot:run
+```
+- Para manejo de recaudar informacion de la API OMDB/GEMINI
+```bash
+./mvnw spring-boot:run  -Dspring-boot.run.arguments=--cli
 ```
 
 Esto compilará y ejecutará la aplicación. Verás un menú interactivo en la consola para buscar series, consultar temporadas, ver rankings y más.
@@ -88,6 +94,7 @@ Ambos servicios están conectados en una red interna llamada `demo_network` para
 .
 ├── src
 │   ├── main/java/mx/aluracursos/omdbapi_springboot
+│   │   ├── cli/           # Interfaz interactiva
 │   │   ├── client/        # Cliente OMDB y Gemini
 │   │   ├── config/        # Configuración de APIs
 │   │   ├── models/        # Modelos de datos
@@ -106,6 +113,9 @@ Además de buscar información en OMDB, este proyecto utiliza la **API de Gemini
 Para que esto funcione, necesitas una clave de Gemini API, que debes colocar en el archivo `src/main/resources/application.properties`.
 
 ## 🗂️ ¿Para qué sirve cada archivo principal?
+
+- **src/main/java/mx/aluracursos/omdbapi_springboot/cli/MenuInteractivo.java**  
+  Es la interfaz de texto que ves al ejecutar la aplicación. Aquí puedes buscar series, ver temporadas, rankings, etc.
 
 - **src/main/java/mx/aluracursos/omdbapi_springboot/client/OmdbApiClient.java**  
   Se encarga de conectarse a la API de OMDB, buscar series y películas, y traer la información.
@@ -128,3 +138,12 @@ Para que esto funcione, necesitas una clave de Gemini API, que debes colocar en 
 - **docker/.env**  
   Aquí defines los usuarios y contraseñas para la base de datos y pgAdmin.
 
+
+---
+
+## 💡 Créditos
+
+- Proyecto original por [Alura Latam](https://www.aluracursos.com/) y [Monica Hillman](https://www.linkedin.com/in/monicamhillman/)
+- Modificaciones y personalización por: *@jmikhaelz* ✨
+
+---
